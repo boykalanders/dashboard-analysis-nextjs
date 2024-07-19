@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+  background: rgb(3 7 18);
+}
+
+.fade-out {
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+}
+
+.fade-in {
+  transition: opacity 0.5s ease-in;
+  opacity: 1;
+}
+
+.shadow {
+  box-shadow: -11px 16px 31.8px 5px rgba(255, 255, 255, 0.25);
+}
+
+.hero-title {
+  color: #fff;
+
+  font-family: Inter;
+  font-size: 73px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.hero-subtitle {
+  color: #fff;
+
+  font-family: Inter;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* BELOW 704px (Smaller tablets) */
+@media (max-width: 44em) {
+
+}
+
+/* BELOW 544px (Phones) */
+@media (max-width: 34em) {
+  .hero-title {
+    font-size: 45px;
+  }
+
+  .hero-subtitle {
+    font-size: 17px;
+  }
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8b8b8b6b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999999999999;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  margin: 8px;
+  border: 4px solid #008060;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0, -0.02, 0, -0.01) infinite;
+  border-color: #008060 transparent transparent transparent;
+  z-index: 999999999999999;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
